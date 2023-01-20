@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Almacenamiento",
+        "id": "almacenamiento",
+        "img": "/productos/memorias.jpg"
+    },
+    {
+        "name": "Monitores",
+        "id": "monitores",
+        "img": "/productos/monitores.jpg"
+    },
+    {
+        "name": "Targetas Gráficas",
+        "id": "tarjetasGraficas",
+        "img": "/productos/tarjetasGraficas.jfif"
+    },
+    {
+        "name": "Placas Madres",
+        "id": "placasMadres",
+        "img": "/productos/placasMadres.webp"
+    },
+    {
+        "name": "Procesadores",
+        "id": "procesadores",
+        "img": "/productos/procesadores.jpg"
+    },
+    {
+        "name": "Refrigeración",
+        "id": "refrigeracion",
+        "img": "/productos/refrigeracion.webp"
+    },
+    {
+        "name": "Gabinetes",
+        "id": "gabinetes",
+        "img": "/productos/gabinetes.webp"
+    },
+    {
+        "name": "Sillas Gamer",
+        "id": "sillasGamer",
+        "img": "/productos/sillasGamer.webp"
+    }
+]
