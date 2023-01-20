@@ -5,7 +5,21 @@
   text-decoration: none;
 }
 
+.fontNormal{
+  color: #051937;
+}
 
+a{
+  text-decoration: none;
+  list-style: none;
+  color: #f8f9fa;
+}
+
+.navActive{
+  background-color:#044e52 !important;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75); 
+  height: 10%;
+}
 
 .logo {
   height: 6em;
@@ -33,23 +47,23 @@
 }
 
 .fontHero {
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: #f8f9fa;
 }
 
 .fontHero2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #f8f9fa;
 }
 
-.spanHero{
+.spanHero {
   color: rgba(255, 145, 0, 0.965);
 }
 
-.pet{
-  width: 17%;
+.pet {
+  width: 26%;
   position: absolute;
-  top: 30%;
+  top: 23%;
   left: 58%;
 }
 
@@ -60,9 +74,91 @@
   background-repeat: no-repeat;
 }
 
+.brand :hover{
+  color: rgba(255, 255, 255, 0.55);
+}
 .navLinks {
   text-decoration: none;
   list-style: none;
   color: rgba(255, 255, 255, 0.55);
 }
+.navLinks :hover{
+  color: white
+}
 
+/* ANIMACIONES */
+
+.bounce {
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 60px, 0);
+  }
+}
+
+/* CATEGORIAS */
+
+.categories{
+  background-color: azure;
+}
+
+.cardCategoriesContainer{
+  width: 100%;
+}
+
+.cardCategories {
+  width: 16rem;
+  color:#f8f9fa;
+  background-color: #00304e;
+}
+
+.products{
+  background-color: azure;
+}
+
+.cardProductsContainer{
+  width: 100%;
+}
+
+.cardProducts {
+  width: 16rem;
+  color:#f8f9fa;
+  background-color: #00304e;
+}
+
+/* ITEM DETAIL CONTAINER */
+
+.relleno{
+  height: 10vh;
+}
+
+.detailContainer{
+  background-image: linear-gradient(to left top, #051937, #00304e, #00485e, #005f64, #177663);
+}
+
+.fontDetail {
+  font-size: 3rem;
+  color: #f8f9fa;
+}
+
+.fontDescription {
+  font-size: medium;
+}
+
+.imgDetail {
+  width: 26rem;
+}
+
+.amount {
+  width: 10vh;
+  height: 5vh;
+}
