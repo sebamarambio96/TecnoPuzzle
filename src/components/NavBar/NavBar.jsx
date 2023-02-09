@@ -5,17 +5,27 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from "react-router-dom";
 import { LoginWidget } from "../loginWidget/LoginWidget";
+import { useCartContext } from "../context/CartContext";
 
 export const NavBar = (prop) => {
-    const[navbar,setNavbar] = useState(false)
-    const changeBackground = () => {
-        if(window.scrollY >= 50){
-            setNavbar(true)
-        }else{
-            setNavbar(false)
+    const { navbar,setNavbar } = useCartContext()
+    
+    useEffect(()=>{
+        const changeBackground = () => {
+            if(window.scrollY >= 50){
+                setNavbar(true)
+            }else{
+                setNavbar(false)
+            }
         }
-    }
-    window.addEventListener('scroll', changeBackground)
+
+        window.addEventListener('scroll', changeBackground)
+
+        return () => {}
+    })
+
+    
+
     
     return (
         <>
