@@ -16,7 +16,6 @@ export const CountBuy = ({ initial = 1, stock = 5, addCart}) => {
     }
 
     const amount = () =>{
-        console.log(count)
         addCart(count)
     }
     
@@ -25,7 +24,7 @@ export const CountBuy = ({ initial = 1, stock = 5, addCart}) => {
             <label className='form-label'><h4>Cantidad:</h4></label>
             <InputGroup className='amount mb-2'>
                 <Button variant="outline-warning" onClick={add}><FaPlus/></Button>
-                <div className="form-control">{count}</div>
+                <div className="form-control d-flex justify-content-center">{count}</div>
                 <Button variant="outline-warning" onClick={subtract}><FaMinus/></Button>
             </InputGroup>
             <button className='btn btn-warning' onClick={amount}>Comprar</button>

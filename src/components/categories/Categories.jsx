@@ -18,7 +18,6 @@ export const Categories = () => {
         <div className='categories py-3 d-flex flex-column container-fluid'>
             <h1 className='py-3 fontNormal'>Categorías</h1>
             <div className='row gap-3 gx-4 gx-lg-5 row-cols-2 justify-content-evenly cardCategoriesContainer'>
-
                 {categories.map(item =>
                     <React.Fragment key={item.id}>
                         <Card  className="cardCategories fontNormal">

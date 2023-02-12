@@ -3,17 +3,19 @@
         "id": 1,
         "category": "monitores",
         "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
-        "price": 8100,
+        "price": 81000,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores.jpg",
+        "description": ""
     },
     {
         "id": 11,
         "category": "monitores",
-        "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
-        "price": 8100,
+        "name": "Monitor 20' HD+, Panel TN, 60Hz (E2070SWHN)",
+        "price": 90100,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores11.jpg",
+        "description": "El E2070SWHN ofrece una gran calidad de imagen a una resolución de 1600 x 900 HD, proporcionando características y conectividad que le benefician. El monitor de 19,5 pulgadas, el E2070SWHN también tiene todas la conectividad que necesita para vídeo y audio digital de alta calidad. NO PIERDAS NINGÚN DETALLE EN TUS IMÁGENES El contraste dinámico Ultra-High te proporciona mayor detalle en imágenes, especialmente en áreas con sombras más oscuras.Da vida a tus imágenes con más de 16, 7 millones de colores, disfruta de 0, 5 millones más de tonos que un monitor común. SOFISTICADO DISEÑO Sorpréndete con un moderno diseño delgado entregándote mayor comodidad en tu escritorio.   GARANTÍA DE EFICIENCIA ENERGÉTICA Aprovecha un consumo 50% más bajo en comparación con los LCD comunes, además elahorro programado te permitiráapagar el monitor de forma automáticamente. DIVIDE TU PANTALLA PARA MAYOR PRODUCTIVIDAD Screen + te permite dividir la pantalla hasta en 4 paneles para acceder a múltiples contenidos simultáneamente para una mayor funcionalidad y productividad"
     },
     {
         "id": 12,
@@ -21,7 +23,8 @@
         "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores12.jpg",
+        "description": ""
     },
     {
         "id": 13,
@@ -29,7 +32,8 @@
         "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores13.jpg",
+        "description": ""
     },
     {
         "id": 14,
@@ -37,7 +41,8 @@
         "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores14.jpg",
+        "description": ""
     },
     {
         "id": 15,
@@ -45,7 +50,8 @@
         "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores15.webp",
+        "description": ""
     },
     {
         "id": 16,
@@ -53,7 +59,8 @@
         "name": "Monitor 19,5' HD+, Panel TN, 60Hz",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/monitores.jpg"
+        "img": "/productos/monitores16.webp",
+        "description": ""
     },
     {
         "id": 21,
@@ -69,7 +76,7 @@
         "name": "Placas Madres AMD sAM4",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/placasMadres.webp"
+        "img": "/productos/placasMadres22.webp"
     },
     {
         "id": 23,
@@ -77,7 +84,7 @@
         "name": "Placas Madres AMD sAM4",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/placasMadres.webp"
+        "img": "/productos/placasMadres23.webp"
     },
     {
         "id": 24,
@@ -85,14 +92,15 @@
         "name": "Placas Madres AMD sAM4",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/placasMadres.webp"
-    },{
+        "img": "/productos/placasMadres24.webp"
+    },
+    {
         "id": 25,
         "category": "placasMadres",
         "name": "Placas Madres AMD sAM4",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/placasMadres.webp"
+        "img": "/productos/placasMadres25.webp"
     },
     {
         "id": 26,
@@ -100,7 +108,7 @@
         "name": "Placas Madres AMD sAM4",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/placasMadres.webp"
+        "img": "/productos/placasMadres26.webp"
     },
     {
         "id": 31,
@@ -108,15 +116,17 @@
         "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/procesadores.jpg"
+        "img": "/productos/procesadores.webp",
+        "description": ""
     },
     {
         "id": 32,
         "category": "procesadores",
-        "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
+        "name": "CPU Intel Core i3-9300 2.7 GHz 8MB",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/procesadores.jpg"
+        "img": "/productos/procesadores32.webp",
+        "description": ""
     },
     {
         "id": 33,
@@ -124,7 +134,8 @@
         "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/procesadores.jpg"
+        "img": "/productos/procesadores32.webp",
+        "description": ""
     },
     {
         "id": 34,
@@ -132,7 +143,8 @@
         "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/procesadores.jpg"
+        "img": "/productos/procesadores34.webp",
+        "description": ""
     },
     {
         "id": 35,
@@ -140,7 +152,8 @@
         "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/procesadores.jpg"
+        "img": "/productos/procesadores35.webp",
+        "description": ""
     },
     {
         "id": 36,
@@ -148,73 +161,62 @@
         "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/procesadores.jpg"
+        "img": "/productos/procesadores36.webp",
+        "description": ""
     },
     {
-        "id": 37,
-        "category": "procesadores",
-        "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/procesadores.jpg"
-    },
-    {
-        "id": 38,
-        "category": "procesadores",
-        "name": "CPU Intel Core i3-9300 3.7 GHz 8MB",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/procesadores.jpg"
-    },
-    {
-        "id": 40,
-        "category": "almacenamiento",
-        "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/memorias.jpg"
-    },{
         "id": 41,
         "category": "almacenamiento",
         "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/memorias.jpg"
-    },{
+        "img": "/productos/almacenamiento.webp",
+        "description": ""
+    },
+    {
+        "id": 41,
+        "category": "almacenamiento",
+        "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
+        "price": 8100,
+        "amount": 0,
+        "img": "/productos/almacenamiento42.webp",
+        "description": ""
+    },
+    {
         "id": 42,
         "category": "almacenamiento",
         "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/memorias.jpg"
-    },{
+        "img": "/productos/almacenamiento43.webp",
+        "description": ""
+    },
+    {
         "id": 43,
         "category": "almacenamiento",
         "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/memorias.jpg"
-    },{
+        "img": "/productos/almacenamiento44.webp",
+        "description": ""
+    },
+    {
         "id": 44,
         "category": "almacenamiento",
         "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/memorias.jpg"
-    },{
+        "img": "/productos/almacenamiento45.webp",
+        "description": ""
+    },
+    {
         "id": 45,
         "category": "almacenamiento",
         "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/memorias.jpg"
-    },{
-        "id": 46,
-        "category": "almacenamiento",
-        "name": "Unidad SSD 500GB PCIe NVMe Gen4 M.2 NV2",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/memorias.jpg"
+        "img": "/productos/almacenamiento46.webp",
+        "description": ""
     },
     {
         "id": 51,
@@ -222,7 +224,7 @@
         "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
+        "img": "/productos/tarjetasGraficas.webp"
     },
     {
         "id": 52,
@@ -230,7 +232,7 @@
         "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
+        "img": "/productos/tarjetasGraficas52.webp"
     },
     {
         "id": 53,
@@ -238,7 +240,7 @@
         "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
+        "img": "/productos/tarjetasGraficas53.webp"
     },
     {
         "id": 54,
@@ -246,7 +248,7 @@
         "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
+        "img": "/productos/tarjetasGraficas54.webp"
     },
     {
         "id": 55,
@@ -254,7 +256,7 @@
         "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
+        "img": "/productos/tarjetasGraficas55.webp"
     },
     {
         "id": 56,
@@ -262,15 +264,7 @@
         "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
-    },
-    {
-        "id": 57,
-        "category": "tarjetasGraficas",
-        "name": "Video NVIDIA GeForce GTX1050Ti 4GB Phoenix Fan",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/tarjetasGraficas.jfif"
+        "img": "/productos/tarjetasGraficas56.webp"
     },
     {
         "id": 61,
@@ -286,7 +280,7 @@
         "name": "Watercooling Chione E2 120 Lite",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/refrigeracion.webp"
+        "img": "/productos/refrigeracion62.webp"
     },
     {
         "id": 63,
@@ -294,7 +288,7 @@
         "name": "Watercooling Chione E2 120 Lite",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/refrigeracion.webp"
+        "img": "/productos/refrigeracion63.webp"
     },
     {
         "id": 64,
@@ -302,7 +296,7 @@
         "name": "Watercooling Chione E2 120 Lite",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/refrigeracion.webp"
+        "img": "/productos/refrigeracion64.webp"
     },
     {
         "id": 65,
@@ -310,7 +304,7 @@
         "name": "Watercooling Chione E2 120 Lite",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/refrigeracion.webp"
+        "img": "/productos/refrigeracion65.webp"
     },
     {
         "id": 66,
@@ -318,23 +312,7 @@
         "name": "Watercooling Chione E2 120 Lite",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/refrigeracion.webp"
-    },
-    {
-        "id": 67,
-        "category": "refrigeracion",
-        "name": "Watercooling Chione E2 120 Lite",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/refrigeracion.webp"
-    },
-    {
-        "id": 68,
-        "category": "refrigeracion",
-        "name": "Watercooling Chione E2 120 Lite",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/refrigeracion.webp"
+        "img": "/productos/refrigeracion66.webp"
     },
     {
         "id": 71,
@@ -343,62 +321,46 @@
         "price": 8100,
         "amount": 0,
         "img": "/productos/sillasGamer.webp"
-    },{
+    },
+    {
         "id": 72,
         "category": "sillasGamer",
         "name": "Silla Gamer Wanku V2 Black/Red",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
+        "img": "/productos/sillasGamer72.webp"
+    },
+    {
         "id": 73,
         "category": "sillasGamer",
         "name": "Silla Gamer Wanku V2 Black/Red",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
+        "img": "/productos/sillasGamer73.webp"
+    },
+    {
         "id": 74,
         "category": "sillasGamer",
         "name": "Silla Gamer Wanku V2 Black/Red",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
+        "img": "/productos/sillasGamer74.webp"
+    },
+    {
         "id": 75,
         "category": "sillasGamer",
         "name": "Silla Gamer Wanku V2 Black/Red",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
+        "img": "/productos/sillasGamer75.webp"
+    },
+    {
         "id": 76,
         "category": "sillasGamer",
         "name": "Silla Gamer Wanku V2 Black/Red",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
-        "id": 77,
-        "category": "sillasGamer",
-        "name": "Silla Gamer Wanku V2 Black/Red",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
-        "id": 78,
-        "category": "sillasGamer",
-        "name": "Silla Gamer Wanku V2 Black/Red",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/sillasGamer.webp"
-    },{
-        "id": 79,
-        "category": "sillasGamer",
-        "name": "Silla Gamer Wanku V2 Black/Red",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/sillasGamer.webp"
+        "img": "/productos/sillasGamer76.webp"
     },
     {
         "id": 80,
@@ -414,7 +376,7 @@
         "name": "Gabinete ATX Blackstar",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/gabinetes.webp"
+        "img": "/productos/gabinetes82.webp"
     },
     {
         "id": 82,
@@ -422,7 +384,7 @@
         "name": "Gabinete ATX Blackstar",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/gabinetes.webp"
+        "img": "/productos/gabinetes83.webp"
     },
     {
         "id": 83,
@@ -430,7 +392,7 @@
         "name": "Gabinete ATX Blackstar",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/gabinetes.webp"
+        "img": "/productos/gabinetes84.webp"
     },
     {
         "id": 84,
@@ -438,7 +400,7 @@
         "name": "Gabinete ATX Blackstar",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/gabinetes.webp"
+        "img": "/productos/gabinetes85.webp"
     },
     {
         "id": 85,
@@ -446,46 +408,6 @@
         "name": "Gabinete ATX Blackstar",
         "price": 8100,
         "amount": 0,
-        "img": "/productos/gabinetes.webp"
-    },
-    {
-        "id": 86,
-        "category": "gabinetes",
-        "name": "Gabinete ATX Blackstar",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/gabinetes.webp"
-    },
-    {
-        "id": 87,
-        "category": "gabinetes",
-        "name": "Gabinete ATX Blackstar",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/gabinetes.webp"
-    },
-    {
-        "id": 88,
-        "category": "gabinetes",
-        "name": "Gabinete ATX Blackstar",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/gabinetes.webp"
-    },
-    {
-        "id": 89,
-        "category": "gabinetes",
-        "name": "Gabinete ATX Blackstar",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/gabinetes.webp"
-    },
-    {
-        "id": 801,
-        "category": "gabinetes",
-        "name": "Gabinete ATX Blackstar",
-        "price": 8100,
-        "amount": 0,
-        "img": "/productos/gabinetes.webp"
+        "img": "/productos/gabinetes86.webp"
     }
 ]

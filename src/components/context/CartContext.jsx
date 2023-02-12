@@ -5,33 +5,33 @@ export const CartContext = createContext()
 
 export const useCartContext = () => useContext(CartContext)
 
-export const CardContextProvider = ({children}) =>{
+export const CardContextProvider = ({ children }) => {
 
     const [cartList, setCarList] = useState([])
-    const [product, setProduct] = useState([])
-    const[navbar,setNavbar] = useState(false)
+    const [navbar, setNavbar] = useState(false)
 
-    const addCart = (product) => {
-        setCarList([...cartList,product])
+    const addCart = (product) => setCarList([...cartList, product])
+    const updateCart = (product, amount) => {
+        let item = {}
+        item = cartList.find(item => item.id == product.id)
+        let itemIndex = cartList.indexOf(item)
+        cartList[itemIndex].amount += amount
+        setCarList([...cartList])
     }
+    const deleteProduct = id => setCarList(cartList.filter(item => item.id !== id))
+    const clearCart = () => setCarList([])
+    const counterCart = () => cartList.reduce((counter, item) => counter += item.amount, 0)
 
-    async function getProduct(detailId) {
-        const products = await fetch('/data/products.json')
-        const productsParse = await products.json()
-        console.log(productsParse);
-        const [item] = productsParse.filter(item => item.id === parseInt(detailId))
-        console.log(item)
-        setProduct(item)
-    }
-
-    return(
+    return (
         <CartContext.Provider value={{
             cartList,
-            product,
             navbar,
             setNavbar,
             addCart,
-            getProduct
+            deleteProduct,
+            clearCart,
+            counterCart,
+            updateCart
         }}>
             {children}
         </CartContext.Provider>

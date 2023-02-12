@@ -192,14 +192,36 @@ a {
   height: 9vh;
 }
 
-.btnBuy{
+.btnBuy {
   width: 100%
 }
 
-.scrolly{
+.scrolly {
   overflow-y: auto;
 }
 
-.card-body{
+.card-body {
   width: 100%;
+}
+
+/* ERROR */
+
+.errorContainer {
+  background-image: linear-gradient(to left top, #051937, #00304e, #00485e, #005f64, #177663);
+  height: 100vh;
+}
+
+.fontError {
+  font-size: 8rem;
+  color: #d9dada;
+}
+
+.fontErrorCategory {
+  font-size: 5rem;
+  color: #0f0f0f;
+}
+
+.fontErrorCart {
+  font-size: 2rem;
+  color: #50505094;
 }
