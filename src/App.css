@@ -27,17 +27,17 @@ a {
   will-change: filter;
 }
 
-.carrito {
+.cart {
   width: 30px;
   height: auto;
   margin-right: 10px;
 }
 
-.fondoCarrito {
+/* .backCarrito {
   background-color: whitesmoke;
   padding: 5px;
   border-radius: 10px;
-}
+} */
 
 .heroSection {
   background-image: linear-gradient(to left top, #051937, #00304e, #00485e, #005f64, #177663);
@@ -204,6 +204,12 @@ a {
   width: 100%;
 }
 
+.btn-warning {
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #20c997;
+  --bs-btn-active-border-color: #ffc720;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
 /* ERROR */
 
 .errorContainer {

@@ -7,32 +7,38 @@ import { createOrder, getItemByID, updateStock } from '../../../services/firebas
 
 export const CartContainer = () => {
   const { cartList, setNavbar, deleteProduct, clearCart } = useCartContext()
-  const [precioFinal, setPrecioFinal] = useState()
+  const [finalPrice, setFinalPrice] = useState()
+  const [valid, setValid] = useState(false)
   const [dataForm, setDataForm] = useState({
     name: '',
     email: '',
-    validarMail:'',
+    emailValidation: '',
     phone: ''
   })
-  
+
   setNavbar(true)
 
   useEffect(() => {
-    setPrecioFinal(cartList.reduce((total, item) => total += item.amount * item.price, 0))
+    setFinalPrice(cartList.reduce((total, item) => total += item.amount * item.price, 0))
   }, [cartList])
 
-  const handleOnChange = (e) =>{
-    console.log(e.target.name)
-    console.log(e.target.value)
-    setDataForm({
-      ...dataForm, 
-      [e.target.name]: e.target.value
-    })
+  const handleOnChange = (e) => {
+    const form = {...dataForm, [e.target.name]: e.target.value}
+    setDataForm(form)
   }
+
+  useEffect(()=>{
+    if (dataForm.name === "" || dataForm.phone === "" || dataForm.email === "" || dataForm.email !== dataForm.emailValidation) {
+      setValid(false)
+    } else {
+      setValid(true)
+    }
+    console.log(dataForm)
+  },[dataForm])
 
   function sendOrder(e) {
     e.preventDefault()
-    createOrder(cartList, precioFinal,dataForm)
+    createOrder(cartList, finalPrice, dataForm)
     cartList.map(item => {
       getItemByID('products', item.id).then(resp => {
         let stockFinal = resp.stock - item.amount
@@ -40,14 +46,16 @@ export const CartContainer = () => {
       })
     })
   }
-
+  function notValid(e) {
+    e.preventDefault()
+  }
   return (
     <div className='container-fluid vw-100'>
       <div className='relleno'></div>
 
       <div className='row'>
         <div className='col-9 productCartContainer border d-flex flex-column justify-content-between'>
-          <h2 className='pt-2'>Productos</h2>
+          <h4 className='py-2 border-bottom'>Productos</h4>
           <div className='scrolly'>
 
             {/* PRODUCTOS EN CARRITO*/}
@@ -58,8 +66,8 @@ export const CartContainer = () => {
               cartList.map(item =>
                 <React.Fragment key={item.id}>
                   <div className='card-body row my-4'>
-                    <div className='col-2'>
-                      <img id="imgProductoCompras" src={item.img} alt={item.name} width="90" height="120"></img>
+                    <div className='col-2 ms-3'>
+                      <img src={item.img} alt={item.name} width="90" height="120"></img>
                     </div>
 
                     <div className='col-8'>
@@ -76,40 +84,53 @@ export const CartContainer = () => {
               )}
           </div>
 
-          <div className='formCartContainer form-control'>
-            <hr />
+          <div className='formCartContainer border-top container-fluid p-2'>
             {/* FORM */}
-            <form onSubmit={sendOrder} id='CreateForm'>
+            <form onSubmit={valid ? sendOrder : notValid} id='CreateForm' className='row'>
               <h4>Datos de compra</h4>
-              <input
-                type="text"
-                name="name"
-                placeholder='Ingresar nombre'
-                value={dataForm.name}
-                onChange={handleOnChange}
-              />
-              <input
-                type="text"
-                name="phone"
-                placeholder='Ingresa tu celular'
-                value={dataForm.phone}
-                onChange={handleOnChange}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder='Ingresa tu email'
-                value={dataForm.email}
-                onChange={handleOnChange}
-              />
-              <input
-                type="text"
-                name="validarMail"
-                placeholder='Confirma tu email'
-                value={dataForm.validarMail}
-                onChange={handleOnChange}
-              />
-              
+              <div className='col-8 mb-3'>
+                <label className="form-label text-muted">Nombre Completo</label>
+                <input
+                  className='form-control'
+                  type="text"
+                  name="name"
+                  placeholder='Henry Cavill'
+                  value={dataForm.name}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div className='col-4 mb-3'>
+                <label className="form-label text-muted">Teléfono</label>
+                <input
+                  className='form-control'
+                  type="text"
+                  name="phone"
+                  placeholder='555 555 55'
+                  value={dataForm.phone}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div className='col-6 mb-3'>
+                <label className="form-label text-muted">Ingrese su email</label>
+                <input
+                  className='form-control'
+                  type="email"
+                  name="email"
+                  placeholder='henryCavill@gmail.com'
+                  value={dataForm.email}
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div className='col-6 mb-3'>
+                <label className="form-label text-muted">Confirma tu email</label>
+                <input
+                  className='form-control'
+                  type="text"
+                  name="emailValidation"
+                  value={dataForm.emailValidation}
+                  onChange={handleOnChange}
+                />
+              </div>
             </form>
           </div>
         </div>
@@ -128,14 +149,18 @@ export const CartContainer = () => {
           </div>
           <div className='buttonCartContainer d-flex flex-column justify-content-end'>
             <div className='d-flex align-items-center justify-content-center'>
-              <h5>Precio total: ${precioFinal}</h5>
+              <h5>Precio total: ${finalPrice}</h5>
             </div>
             <div className='row'>
               <div className='col-2'>
                 <Button variant="outline-danger" onClick={() => clearCart()}><AiOutlineDelete /></Button>
               </div>
               <div className='col-10'>
-                <button type="submit" form="CreateForm" className="btn btn-warning btnBuy d-flex align-items-center justify-content-center">COMPRAR</button>
+                <button type="submit" form="CreateForm" className={valid ?
+                  'btn btn-warning btnBuy d-flex align-items-center justify-content-center'
+                  :
+                  'btn bg-secondary btnBuy d-flex align-items-center justify-content-center'}>COMPRAR
+                </button>
               </div>
             </div>
           </div>
