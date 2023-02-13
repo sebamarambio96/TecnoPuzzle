@@ -1,29 +1,22 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useParams } from 'react-router-dom';
 import { FaGrinBeamSweat } from "react-icons/fa";
+import { getItemByCategory, getItems } from '../../services/firebase';
 
 export const Products = () => {
     const [products, setProducts] = useState([])
     const [category, setCategory] = useState([])
     const { categoryId } = useParams()
-    console.log(category.indexOf(categoryId))
-    async function getProducts() {
-        const products = await fetch('/data/products.json')
-        const productsParse = await products.json()
-        setProducts(categoryId ? productsParse.filter(item => item.category === categoryId) : productsParse)
-    }
-
-    async function getCategory() {
-        const products = await fetch('/data/categories.json')
-        const categoryParse = await products.json()
-        setCategory(categoryParse.map(item => item.id))
-    }
 
     useEffect(() => {
-        getCategory()
-        getProducts()
+        getItems('categories').then(resp => setCategory(resp.map(item => item.idCategory)))
+        if (categoryId) {
+            getItemByCategory(categoryId).then(resp => setProducts(resp))
+        } else {
+            getItems('products').then(resp => setProducts(resp))
+        }
     }, [categoryId])
 
     return (
@@ -36,7 +29,6 @@ export const Products = () => {
                         ?
                         <h2 className='fontErrorCategory'>Ups, parece que te perdiste <FaGrinBeamSweat /></h2>
                         :
-
                         products.map(item =>
                             <React.Fragment key={item.id}>
                                 <Card className="cardProducts fontNormal">
