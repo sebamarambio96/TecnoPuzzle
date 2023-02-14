@@ -4,10 +4,10 @@ import { ItemListContainer } from './components/container/itemListContainer/Item
 import { NavBar } from './components/NavBar/NavBar'
 import { ItemDetailContainer } from './components/container/itemDetailContainer/itemDetailContainer'
 import { CartContainer } from './components/container/CartContainer/CartContainer'
-import { LoginContainer } from './components/container/LoginContainer/LoginContainer'
-import './App.css'
 import { getItems } from './services/firebase'
 import { CardContextProvider } from './components/context/CartContext'
+import { ProductsContainer } from './components/container/ProductsContainer/ProductsContainer'
+import './App.css'
 
 
 
@@ -21,10 +21,10 @@ function App() {
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/inicio' element={<ItemListContainer />} />
 
-          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ProductsContainer />} />
+          <Route path='/category/' element={<ProductsContainer />} />
           <Route path='/detail/:detailId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartContainer />} />
-          <Route path='/login' element={<LoginContainer />} />
 
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>

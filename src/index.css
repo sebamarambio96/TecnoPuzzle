@@ -68,3 +68,10 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.navLinks {
+  text-decoration: none;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.55) !important;
+  --bs-btn-color: rgba(255, 255, 255, 0.55) !important;
+}

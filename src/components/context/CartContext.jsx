@@ -8,7 +8,7 @@ export const useCartContext = () => useContext(CartContext)
 export const CardContextProvider = ({ children }) => {
 
     const [cartList, setCarList] = useState([])
-    const [navbar, setNavbar] = useState(false)
+    const [navbar, setNavbar] = useState()
 
     const addCart = (product) => setCarList([...cartList, product])
     const updateCart = (product, amount) => {
