@@ -46,16 +46,18 @@ export const ItemDetailContainer = () => {
     }
 
     return (
-        <div className='container-fluid detailContainer vw-100 vh-100 d-flex justify-content-evenly align-items-center'>
+        <div className='container-fluid detailContainer vw-100 h-100 d-flex justify-content-evenly align-items-center'>
             {loading
                 ?
-                <Loading />
+                <div className='vh-100 d-flex justify-content-evenly align-items-center'>
+                    <Loading/>
+                </div>
                 :
                 !product.name
                     ?
                     <NotFound />
                     :
-                    <div className='products detailContainer'>
+                    <div className='products detailContainer h-100 vw-100'>
                         <div className='backfill'></div>
                         <div className='fontDetail p-4'>
                             <div className='row'>

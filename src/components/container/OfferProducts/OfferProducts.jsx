@@ -5,7 +5,6 @@ import { Loading } from '../../Loading/Loading';
 
 export const OfferProducts = () => {
     const [products, setProducts] = useState([])
-    const [category, setCategory] = useState([])
     const [loading, setLoading] = useState(true)
 
     //array with actual OFFERS
@@ -26,7 +25,9 @@ export const OfferProducts = () => {
                 <div className='row pb-4 gap-3 gx-lg-5 row-cols-2 container-fluid d-flex justify-content-center align-items-center cardProductsContainer '>
                     {loading
                         ?
-                        <Loading />
+                        <div className='vw-100 d-flex justify-content-evenly align-items-center'>
+                            <Loading />
+                        </div>
                         :
                         products.map(item => <CardProduct item={item} desc={'0% desc.'} key={item.id} />)
                     }
