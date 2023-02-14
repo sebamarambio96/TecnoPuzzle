@@ -12,13 +12,16 @@ export const Products = () => {
     const { categoryId } = useParams()
 
     useEffect(() => {
+        //GET CATEGORIES
         getItems('categories').then(resp => setCategory(resp.map(item => item.idCategory)))
         if (categoryId) {
+            //GET products by category
             getItemByCategory(categoryId).then(resp => {
                 setProducts(resp)
                 setLoading(false)
             })
         } else {
+            //GET ALL products
             getItems('products').then(resp => {
                 setProducts(resp)
                 setLoading(false)
@@ -27,7 +30,7 @@ export const Products = () => {
     }, [categoryId])
 
     return (
-        <div className='products py-3 d-flex flex-column container-fluid backStyle'>
+        <div className='products py-3 d-flex flex-column container-fluid backStyle vw-100'>
             <h1 className='py-3 fontNormal'>Productos</h1>
             <div className='row gap-3 gx-4 gx-lg-5 row-cols-2 justify-content-evenly cardProductsContainer'>
                 {loading

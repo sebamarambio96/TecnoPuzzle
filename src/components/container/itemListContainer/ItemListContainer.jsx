@@ -3,11 +3,11 @@ import { Categories } from "../../categories/categories";
 import { useCartContext } from "../../context/CartContext";
 import { Footer } from "../../Footer/Footer";
 import { HeroSection } from "../../heroSection/HeroSection";
-import { Products } from "../../products/Products";
 import { OfferProducts } from "../OfferProducts/OfferProducts";
 
 export const ItemListContainer = () => {
     const { setNavbar } = useCartContext()
+    //NAVBAR Control
     const changeBackground = () => {
         if (window.scrollY >= 50) {
             setNavbar(true)
@@ -15,21 +15,20 @@ export const ItemListContainer = () => {
             setNavbar(false)
         }
     }
-
-    useEffect(()=>{
+    //SET initial state
+    useEffect(() => {
         changeBackground()
-    },[])
-
+    }, [])
+    //SET dinamic state
     useEffect(() => {
         window.addEventListener('scroll', changeBackground)
     })
-    
+
     return (
-        <>  
+        <>
             <HeroSection />
-            <OfferProducts/>
+            <OfferProducts />
             <Categories />
-            <Footer/>
         </>
     )
 }

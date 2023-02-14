@@ -7,9 +7,10 @@ import { Products } from '../../products/Products'
 
 export const ProductsContainer = () => {
     const { setNavbar } = useCartContext()
-    useEffect(()=>{
+    //NAVBAR Control
+    useEffect(() => {
         setNavbar(true)
-    },[])
+    }, [])
     useEffect(() => {
         const changeBackground = () => {
             if (window.scrollY >= 0) {
@@ -25,7 +26,6 @@ export const ProductsContainer = () => {
             <NavBar />
             <Categories />
             <Products />
-            <Footer/>
         </>
     )
 }

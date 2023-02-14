@@ -47,24 +47,23 @@ export async function getItemByCategory(categoryId) {
     return docsData
 }
 //Crear orders
-export async function createOrder(cartList,precioFinal,dataForm) {
-    const order= {}
+export async function createOrder(cartList, precioFinal, dataForm) {
+    const order = {}
     order.buyer = dataForm
-    order.items = cartList.map(({ id, name, price,amount }) => ({ name, price, id,amount }))
+    order.items = cartList.map(({ id, name, price, amount }) => ({ name, price, id, amount }))
     order.total = precioFinal
     //Creamos una referencia
     const collectionRef = collection(db, `orders`)
     //Enviar documentos
-    addDoc(collectionRef,order)
-    .then(resp=> console.log(resp))
-
+    const orderInfo = await addDoc(collectionRef, order)
+    return orderInfo
 }
 //Actualizar stock
-export async function updateStock(id,newStock) {
+export async function updateStock(id, newStock) {
     //Referencia a un documento
     const itemRef = doc(db, 'products', id)
     //Actualizar datos de la selección
     updateDoc(itemRef, {
-        stock:newStock
+        stock: newStock
     })
 }

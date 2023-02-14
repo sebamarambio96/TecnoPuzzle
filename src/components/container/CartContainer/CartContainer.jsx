@@ -4,20 +4,24 @@ import { AiOutlineClose, AiOutlineDelete } from 'react-icons/ai';
 import Button from 'react-bootstrap/Button';
 import { FaRegGrinBeamSweat } from "react-icons/fa";
 import { createOrder, getItemByID, updateStock } from '../../../services/firebase';
-import { Card } from 'react-bootstrap';
+import { Card, Modal } from 'react-bootstrap';
 
 
 export const CartContainer = () => {
   const { cartList, setNavbar, deleteProduct, clearCart } = useCartContext()
+  const [show, setShow] = useState(false);
   const [finalPrice, setFinalPrice] = useState()
+  const [orderNumber, setOrderNumber] = useState()
   const [valid, setValid] = useState(false)
   const [dataForm, setDataForm] = useState({
     name: '',
     email: '',
     emailValidation: '',
-    phone: ''
+    phone: '',
+    date: ''
   })
 
+  //NAVBAR Control
   useEffect(() => {
     setNavbar(true)
   }, [])
@@ -29,40 +33,53 @@ export const CartContainer = () => {
     }
     window.addEventListener('scroll', changeBackground)
   })
-
+  //calculate TOTAL PRICE
   useEffect(() => {
     setFinalPrice(cartList.reduce((total, item) => total += item.amount * item.price, 0))
   }, [cartList])
 
+  //ORDER MODAL
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  //? FORM
+  //update DATAFORM in real time
   const handleOnChange = (e) => {
-    const form = { ...dataForm, [e.target.name]: e.target.value }
+    const form = { ...dataForm, [e.target.name]: e.target.value, date: new Date() }
     setDataForm(form)
   }
-
+  //form VALIDATION
   useEffect(() => {
     if (dataForm.name === "" || dataForm.phone === "" || dataForm.email === "" || dataForm.email !== dataForm.emailValidation) {
       setValid(false)
     } else {
       setValid(true)
     }
-    console.log(dataForm)
   }, [dataForm])
 
-  function sendOrder(e) {
+  //CREATE, UPDATE stock and SHOW order
+  async function sendOrder(e) {
     e.preventDefault()
-    createOrder(cartList, finalPrice, dataForm)
-    cartList.map(item => {
+    //CREATE order and return ID
+    const orderNumber = await createOrder(cartList, finalPrice, dataForm)
+    setOrderNumber(orderNumber._key.path.segments[1])
+    //UPDATE stock on each element
+    await cartList.map(item => {
       getItemByID('products', item.id).then(resp => {
         let stockFinal = resp.stock - item.amount
         updateStock(item.id, stockFinal)
       })
     })
+    //SHOW modal witch order information
+    handleShow()
   }
+  //PREVENT not valid info
   function notValid(e) {
     e.preventDefault()
   }
+
   return (
-    <div className='container-fluid vw-100'>
+    <div className='container-fluid vw-99'>
       <div className='backfill'></div>
 
       <div className='row'>
@@ -70,7 +87,7 @@ export const CartContainer = () => {
           <h4 className='py-2 border-bottom'>Productos</h4>
           <div className='scrolly fontNormal '>
 
-            {/* PRODUCTOS EN CARRITO*/}
+            {/* PRODUCTS IN CART*/}
             {cartList.length === 0
               ?
               <h4 className='fontErrorCart text-warning'>Ups, parece que no has agregado nada al carrito <FaRegGrinBeamSweat /></h4>
@@ -173,6 +190,22 @@ export const CartContainer = () => {
                   :
                   'btn bg-secondary btnBuy d-flex align-items-center justify-content-center'}>COMPRAR
                 </button>
+                {/* ORDER */}
+                <Modal centered show={show} onHide={handleClose}>
+                  <Modal.Header className='modalStyle' closeButton>
+                    <Modal.Title>COMPRA EXITOSA!!!</Modal.Title>
+                  </Modal.Header>
+                  <div className='backStyleModal'>
+                    <Modal.Body>Su orden a sido generada con el codigo: <span className='text-warning fw-bolder'>{orderNumber}</span></Modal.Body>
+                    <Modal.Body className='fw-bold'>DATOS:</Modal.Body>
+                    <Modal.Body><span className='text-info fw-bold'>Nombre:</span> {dataForm.name}</Modal.Body>
+                    <Modal.Body><span className='text-info fw-bold'>Teléfono:</span> {dataForm.phone}</Modal.Body>
+                    <Modal.Body><span className='text-info fw-bold'>Email:</span> {dataForm.email}</Modal.Body>
+                    <Modal.Body><span className='text-info fw-bold'>Fecha:</span> {(dataForm.date).toString()}</Modal.Body>
+                  </div>
+                  <Modal.Footer className='modalStyle'>
+                  </Modal.Footer>
+                </Modal>
               </div>
             </div>
           </div>

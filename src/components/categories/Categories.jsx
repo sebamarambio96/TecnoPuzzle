@@ -10,6 +10,7 @@ export const Categories = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        //GET categories
         getItems('categories').then(resp => {
             setCategories(resp)
             setLoading(false)

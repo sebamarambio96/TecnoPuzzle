@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export const CardProduct = ({item, desc}) => {
+export const CardProduct = ({ item, desc }) => {
     return (
         <>
             <Card className="cardProducts fontNormal shadow rounded">

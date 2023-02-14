@@ -7,8 +7,8 @@ import { CartContainer } from './components/container/CartContainer/CartContaine
 import { getItems } from './services/firebase'
 import { CardContextProvider } from './components/context/CartContext'
 import { ProductsContainer } from './components/container/ProductsContainer/ProductsContainer'
+import { Footer } from './components/Footer/Footer'
 import './App.css'
-
 
 
 function App() {
@@ -25,9 +25,11 @@ function App() {
           <Route path='/category/' element={<ProductsContainer />} />
           <Route path='/detail/:detailId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<CartContainer />} />
-
+          
+          {/* WILDCARD */}
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CardContextProvider>
   )

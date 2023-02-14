@@ -5,20 +5,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
-import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
+import { ButtonGroup } from "react-bootstrap";
 import { getItems } from "../../services/firebase";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export const NavBar = (prop) => {
-    const { navbar, setNavbar } = useCartContext()
+    const { navbar } = useCartContext()
     const [categories, setCategories] = useState([])
     useEffect(() => {
         getItems('categories').then(resp => {
             setCategories(resp)
         })
     }, [])
-    let variant = 'outline-info'
 
+    //STYLE dropdown
+    let variant = 'outline-info'
 
     return (
         <>
@@ -36,13 +37,13 @@ export const NavBar = (prop) => {
                                 id={`dropdown-variants-${variant}`}
                                 variant={variant.toLowerCase()}
                                 title={'Productos'}>
-                                <Link className='dropdown-item' TO={`/category/`} eventKey="4">Categorías</Link>
+                                <Link className='dropdown-item' to={`/category/`} >Todos</Link>
                                 <NavDropdown.Divider />
+                                {/* CATEGORIES */}
                                 {categories.map(item =>
-                                    <Link key={item.idCategory} className='dropdown-item' to={`/category/${item.idCategory}`} eventKey={item.idCategory}>{item.name}</Link>
+                                    <Link key={item.idCategory} className='dropdown-item' to={`/category/${item.idCategory}`}>{item.name}</Link>
                                 )}
                             </NavDropdown>
-                            <NavLink className={({ isActive }) => isActive ? 'btn btn-outline-light' : 'btn navLinks'} to="/contacto">Contacto</NavLink>
                         </Nav>
                         <Nav className='gap-5 col-4 d-flex justify-content-center'>
                             <CartWidget />

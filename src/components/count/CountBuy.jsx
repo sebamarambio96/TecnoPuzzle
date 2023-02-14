@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Modal } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -8,6 +9,7 @@ export const CountBuy = ({ initial = 1, stock = 5, addCart }) => {
     const [count, setCount] = useState(initial)
     const [sent, setSent] = useState(false)
 
+    //count CONTROL (min and max)
     const add = () => {
         count < stock && setCount(count + 1)
     }
@@ -15,7 +17,7 @@ export const CountBuy = ({ initial = 1, stock = 5, addCart }) => {
     const subtract = () => {
         count > initial && setCount(count - 1)
     }
-
+    //ADD cart and EXCHANGE BTN control
     const amount = () => {
         addCart(count)
         setSent(true)
@@ -32,11 +34,13 @@ export const CountBuy = ({ initial = 1, stock = 5, addCart }) => {
             {sent
                 ?
                 <div>
-                    <Link className='btn btn-info p-3 mt-3' to="/category/">Seguir Comprando</Link>
+                    <Link className='btn btn-info p-3 mt-3' to="/category">Seguir Comprando</Link>
                     <Link className='btn btn-success p-2 ms-3 mt-3' to="/cart">Ir al Carrito</Link>
                 </div>
                 :
-                <button className='btn btn-warning p-3 px-4 fs-4 mt-4' onClick={amount}>Comprar</button>
+                <>
+                    <button className='btn btn-warning p-3 px-4 fs-4 mt-4' onClick={amount}>Comprar</button>
+                </>
             }
 
         </div>
