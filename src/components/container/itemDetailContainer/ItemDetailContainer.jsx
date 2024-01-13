@@ -61,10 +61,10 @@ export const ItemDetailContainer = () => {
                         <div className='backfill'></div>
                         <div className='fontDetail p-4'>
                             <div className='row'>
-                                <div className='detailImgContainer col-4 m-3'>
+                                <div className='detailImgContainer col-lg-4 col-sm-2 m-3'>
                                     <Card.Img variant="top" className='offerImg' src={product.img} alt={product.name} />
                                 </div>
-                                <div className='col-7 m-3'>
+                                <div className='col-lg-7 col-sm-7 m-3'>
                                     <h1 className='fontHero2'>{product.name}</h1>
                                     <h3>SKU: {product.id}</h3>
                                     <h4 className='fs-2'>$ {product.price}</h4>

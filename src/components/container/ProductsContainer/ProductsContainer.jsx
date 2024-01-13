@@ -25,7 +25,7 @@ export const ProductsContainer = () => {
             <div className='backfill'></div>
             <NavBar />
             <Categories />
-            <Products />
+            <Products />    
         </>
     )
 }

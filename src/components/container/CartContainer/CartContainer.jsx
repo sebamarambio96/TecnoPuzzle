@@ -83,7 +83,7 @@ export const CartContainer = () => {
       <div className='backfill'></div>
 
       <div className='row'>
-        <div className='col-9 productCartContainer border d-flex flex-column justify-content-between fontNormal backCart1'>
+        <div className='col-lg-9 col-sm-12 productCartContainer border d-flex flex-column justify-content-between fontNormal backCart1'>
           <h4 className='py-2 border-bottom'>Productos</h4>
           <div className='scrolly fontNormal '>
 
@@ -95,17 +95,17 @@ export const CartContainer = () => {
               cartList.map(item =>
                 <React.Fragment key={item.id}>
                   <div className='card-body row my-4'>
-                    <div className='offerImgContainer col-2 ms-3'>
-                      <Card.Img variant="top" className='offerImg' width="90" height="120" src={item.img} alt={item.name} />
+                    <div className='offerImgContainer col-lg-2 col-sm-12 ms-3'>
+                      <Card.Img variant="top" className='offerImg img-fluid' src={item.img} alt={item.name} />
                     </div>
 
-                    <div className='col-8 mx-2'>
+                    <div className='col-lg-8 col-sm-12 mx-2'>
                       <h6>SKU: {item.id}</h6>
                       <h5>{item.name}</h5>
                       <h5>Cantidad: {item.amount}</h5>
                       <h4>$ {item.price}</h4>
                     </div>
-                    <div className='col-1 d-flex flex-column justify-content-center'>
+                    <div className='col-lg-1 d-flex flex-column justify-content-center'>
                       <Button variant="outline-warning" onClick={() => deleteProduct(item.id)}><AiOutlineClose /></Button>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ export const CartContainer = () => {
         </div>
 
         {/* TOTAL DEL CARRITO */}
-        <div className='col-3 totalCartContainer border fontNormal backCart2'>
+        <div className='col-lg-3 col-sm-12 totalCartContainer border fontNormal backCart2'>
           <div className='totalCart scrolly'>
             <h2 className='pt-2'>Detalle</h2>
             <ul>
