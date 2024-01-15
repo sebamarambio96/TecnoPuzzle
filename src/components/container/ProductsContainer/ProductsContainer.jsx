@@ -1,31 +1,31 @@
-import React, { useEffect } from 'react'
-import { Categories } from '../../categories/categories'
-import { useCartContext } from '../../context/CartContext'
-import { Footer } from '../../Footer/Footer'
-import { NavBar } from '../../NavBar/NavBar'
-import { Products } from '../../products/Products'
+import React, { useEffect } from "react";
+import { Categories } from "../../categories/categories";
+import { useCartContext } from "../../context/CartContext";
+import { Footer } from "../../Footer/Footer";
+import { NavBar } from "../../NavBar/NavBar";
+import { Products } from "../../products/Products";
 
 export const ProductsContainer = () => {
-    const { setNavbar } = useCartContext()
+    const { setNavbar } = useCartContext();
     //NAVBAR Control
     useEffect(() => {
-        setNavbar(true)
-    }, [])
+        setNavbar(true);
+    }, []);
     useEffect(() => {
         const changeBackground = () => {
             if (window.scrollY >= 0) {
-                setNavbar(true)
+                setNavbar(true);
             }
-        }
-        window.addEventListener('scroll', changeBackground)
-    })
+        };
+        window.addEventListener("scroll", changeBackground);
+    });
 
     return (
         <>
-            <div className='backfill'></div>
+            <div className="backfill"></div>
             <NavBar />
+            <Products />
             <Categories />
-            <Products />    
         </>
-    )
-}
+    );
+};

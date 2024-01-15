@@ -384,10 +384,10 @@ a {
 
 @media (max-width: 770px) {
     .cardCategoriesContainer {
-        flex-direction: column; /* Cambia la dirección de la fila a columna */
+        flex-direction: column;
     }
     .cardCategories {
-        width: 90%; /* Ajusta el ancho de las tarjetas al 100% en pantallas pequeñas */
+        width: 90%;
     }
 
     .cardCategoriesContainer {
@@ -411,13 +411,13 @@ a {
 
 @media (min-width: 700px) and (max-width: 1024px) {
     .cardCategoriesContainer {
-        flex-direction: column; /* Cambia la dirección de la fila a columna */
+        flex-direction: column;
     }
     .cardCategoriesContainer {
         overflow-x: auto;
     }
     .cardCategories {
-        width: 40%; /* Ajusta el ancho de las tarjetas al 100% en pantallas pequeñas */
+        width: 40%;
     }
     .fontHero {
         font-size: 4.7rem;
@@ -450,7 +450,7 @@ a {
 
 @media (max-width: 768px) {
     .navbar-collapse {
-        background-color: #0c444e; /* Cambia #ffffff por el color de fondo que desees */
+        background-color: #0c444e;
         border-radius: 30px;
     }
     .navLinks {
@@ -473,7 +473,7 @@ a {
     }
     .cartButton {
         margin: 0 auto 20px;
-        display: block; /* Asegura que ocupe el ancho completo del contenedor */
+        display: block;
         width: 50%;
     }
 
@@ -481,17 +481,17 @@ a {
         position: relative;
     }
 
-    .brand section{
+    .brand section {
         position: absolute;
         top: 0;
         left: 0;
         z-index: 1;
         padding-left: 1rem;
     }
-    
-    .offerImgContainer img{
-      height: 10rem;
-      width: 10rem;
+
+    .offerImgContainer img {
+        height: 10rem;
+        width: 10rem;
     }
 
     .detailImgContainer {
@@ -504,7 +504,6 @@ a {
         object-fit: none;
         border-radius: 10px;
     }
-
 }
 
 .cardCategoriesContainer {

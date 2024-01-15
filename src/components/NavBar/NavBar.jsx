@@ -36,6 +36,7 @@ export const NavBar = (prop) => {
                             <NavLink className={({ isActive }) => (isActive ? "btn btn-outline-light cartButton" : "btn navLinks cartButton")} to="/inicio">
                                 Inicio
                             </NavLink>
+                            
                             <NavDropdown className="navLinks cartButton" as={ButtonGroup} key={variant} id={`dropdown-variants-${variant}`} variant={variant.toLowerCase()} title={"Productos"}>
                                 <Link className="dropdown-item" to={`/category/`}>
                                     Todos

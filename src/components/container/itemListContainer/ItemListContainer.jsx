@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Categories } from "../../categories/categories";
 import { useCartContext } from "../../context/CartContext";
 import { Footer } from "../../Footer/Footer";
@@ -6,23 +6,40 @@ import { HeroSection } from "../../heroSection/HeroSection";
 import { OfferProducts } from "../OfferProducts/OfferProducts";
 
 export const ItemListContainer = () => {
-    const { setNavbar } = useCartContext()
-    //NAVBAR Control
-    const changeBackground = () => {
-        if (window.scrollY >= 50) {
-            setNavbar(true)
-        } else {
-            setNavbar(false)
+    const { setNavbar } = useCartContext();
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+
+        if (currentScrollPos >= 50 && prevScrollPos < 50) {
+            setNavbar(true);
+        } else if (currentScrollPos < 50 && prevScrollPos >= 50) {
+            setNavbar(false);
         }
-    }
-    //SET initial state
+
+        setPrevScrollPos(currentScrollPos);
+    };
+
     useEffect(() => {
-        changeBackground()
-    }, [])
-    //SET dinamic state
+        // Event listener for scroll
+        window.addEventListener("scroll", handleScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [prevScrollPos]);
+
     useEffect(() => {
-        window.addEventListener('scroll', changeBackground)
-    })
+        // Initial state
+        handleScroll();
+
+        // Cleanup on component unmount
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <>
@@ -30,5 +47,5 @@ export const ItemListContainer = () => {
             <OfferProducts />
             <Categories />
         </>
-    )
-}
+    );
+};
